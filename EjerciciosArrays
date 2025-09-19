@@ -1,0 +1,109 @@
+def menu():
+    print("\n--- MENU ---")
+    print("1. Agregar nombre (append)")
+    print("2. Agregar varios (extend)")
+    print("3. Insertar en posicion (insert)")
+    print("4. Eliminar por nombre (remove)")
+    print("5. Eliminar por posicion (pop)")
+    print("6. Buscar posicion (index)")
+    print("7. Contar repeticiones (count)")
+    print("8. Ordenar lista (sort)")
+    print("9. Invertir lista (reverse)")
+    print("10. Mostrar lista")
+    print("11. Salir")
+
+
+def agregar_uno(lista_nombres):
+    nombre = input("Ingrese un nombre: ")
+    lista_nombres.append(nombre)
+    print("Se agregó con append")
+
+
+def agregar_varios(lista_nombres):
+    varios = input("Ingrese varios nombres separados por coma: ").split(",")
+    lista_nombres.extend([n.strip() for n in varios])
+    print("Se agregaron con extend")
+
+
+def insertar(lista_nombres):
+    nombre = input("Nombre a insertar: ")
+    pos = int(input("Posicion: "))
+    lista_nombres.insert(pos, nombre)
+    print("Se insertó con insert")
+
+
+def eliminar_nombre(lista_nombres):
+    nombre = input("Nombre a eliminar: ")
+    lista_nombres.remove(nombre)
+    print("Se eliminó con remove")
+
+
+def eliminar_pos(lista_nombres):
+    pos = int(input("Posicion a eliminar: "))
+    quitado = lista_nombres.pop(pos)
+    print(f"Se eliminó {quitado} con pop")
+
+
+def buscar(lista_nombres):
+    nombre = input("Nombre a buscar: ")
+    pos = lista_nombres.index(nombre)
+    print(f"{nombre} está en la posicion {pos}")
+
+
+def contar(lista_nombres):
+    nombre = input("Nombre a contar: ")
+    veces = lista_nombres.count(nombre)
+    print(f"{nombre} aparece {veces} veces")
+
+
+def ordenar(lista_nombres):
+    lista_nombres.sort()
+    print("Lista ordenada")
+
+
+def invertir(lista_nombres):
+    lista_nombres.reverse()
+    print("Lista invertida")
+
+
+def mostrar(lista_nombres):
+    print("\nLista actual")
+    for i, n in enumerate(lista_nombres):
+        print(i, n)
+
+
+def principal():
+    nombres = []
+    while True:
+        menu()
+        op = input("Opcion: ")
+
+        if op == "1":
+            agregar_uno(nombres)
+        elif op == "2":
+            agregar_varios(nombres)
+        elif op == "3":
+            insertar(nombres)
+        elif op == "4":
+            eliminar_nombre(nombres)
+        elif op == "5":
+            eliminar_pos(nombres)
+        elif op == "6":
+            buscar(nombres)
+        elif op == "7":
+            contar(nombres)
+        elif op == "8":
+            ordenar(nombres)
+        elif op == "9":
+            invertir(nombres)
+        elif op == "10":
+            mostrar(nombres)
+        elif op == "11":
+            print("Programa terminado")
+            break
+        else:
+            print("Opcion invalida")
+
+
+if __name__ == "__main__":
+    principal()
