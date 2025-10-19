@@ -1,5 +1,3 @@
-# ====== Sistema de Control de Tareas ======
-
 usuarios = []
 tareas = []    
 roles = ("Admin", "Empleado", "Invitado")
@@ -141,7 +139,8 @@ def main():
         elif op == "2":
             menu_tareas()
         elif op == "3":
-            print("Saliendo del sistema...")
+            print("Saliendo del sistema")
             break
 
 main()
+
